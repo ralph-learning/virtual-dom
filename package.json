@@ -1,0 +1,26 @@
+{
+  "name": "virtual-dom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main/index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "clean-all": "npm run clean; rm -rf node_modules",
+    "lint": "tslint --fix './src/**/*.ts'",
+    "webpack": "webpack",
+    "prebuild": "npm run clean",
+    "build": "tsc && npm run webpack",
+    "pretest": "npm run build",
+    "test": "node dist/tests/index.spec.js"
+  },
+  "author": "Ralph Effting",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/chai": "^4.2.4",
+    "chai": "^4.2.0",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
