@@ -15,12 +15,18 @@ export const text =
 export const node = (
   tagName: string,
   attributes: IAttributes = {},
-  children: Array<Html> = [],
+  children: Array<Html | string> = [],
 ): INode => ({
   type: NodeType.NODE,
   tagName,
   attributes,
-  children,
+  children: children.map((next: Html | string): Html => {
+    if(typeof next === 'string') {
+      return text(next);
+    }
+
+    return next;
+  }),
 });
 
 export const makeNode = (tagName: string) =>

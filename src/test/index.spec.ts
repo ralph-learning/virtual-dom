@@ -7,4 +7,4 @@ assert.deepEqual(node('div', {}, []), {
     tagName: 'div',
     attributes: {},
     children: [],
-})
+});

@@ -1,4 +1,5 @@
 import { INode } from './types';
+
 import { text, ul, li } from './elements';
 
 interface ITodo {
@@ -12,3 +13,8 @@ const view = (todos: Array<ITodo>): INode =>
           text(next.name)
       ])
   ))
+
+export * from './elements';
+export * from './render';
+export * from './types';
+export { render } from './render';

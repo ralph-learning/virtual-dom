@@ -7,9 +7,17 @@
   <title>Virtual DOM</title>
 </head>
 <body>
-  <script src="dist/bundles/bundle.js"></script>
+  <script src="./dist/bundle/bundle.js"></script>
   <script>
-    // Experiment with VirtualDOM object
+    const ul = VirtualDOM.ul({}, [
+      VirtualDOM.li({}, ['item 01']),
+      VirtualDOM.li({}, ['item 02']),
+    ]);
+    const view  = VirtualDOM.div({}, ['Hello World', ul, VirtualDOM.p({}, [VirtualDOM.p({ onclick: 'alert("ola")'}, ['Ola mundo'])])]);
+    const node = VirtualDOM.render(view );
+
+    document.body.appendChild(node);
+
   </script>
 </body>
 </html>
